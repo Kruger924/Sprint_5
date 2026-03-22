@@ -11,7 +11,7 @@ class TestConstructorPage:
         driver.find_element(*MainPageLocators.sauces_btn).click()
         driver.find_element(*MainPageLocators.bun_btn).click()
         bun_text = driver.find_element(*MainPageLocators.bun).text                 
-        bun_displayed = driver.find_element(*MainPageLocators.bun_ul).is_displayed()
+        bun_displayed = driver.find_element(*MainPageLocators.bun_list).is_displayed()
 
         assert bun_text == 'Булки' and bun_displayed
 
@@ -20,7 +20,7 @@ class TestConstructorPage:
         driver.get(URLS.MAIN_PAGE_URL)
         driver.find_element(*MainPageLocators.sauces_btn).click()
         souces = driver.find_element(*MainPageLocators.sauces).text
-        souces_displayed = driver.find_element(*MainPageLocators.sauces_ul).is_displayed()
+        souces_displayed = driver.find_element(*MainPageLocators.sauces_list).is_displayed()
 
         assert souces == 'Соусы' and souces_displayed
 
@@ -29,6 +29,6 @@ class TestConstructorPage:
         driver.get(URLS.MAIN_PAGE_URL)
         driver.find_element(*MainPageLocators.toppings_btn).click()
         topping = driver.find_element(*MainPageLocators.topping).text
-        topping_displayed = driver.find_element(*MainPageLocators.topping_ul).is_displayed()
+        topping_displayed = driver.find_element(*MainPageLocators.topping_list).is_displayed()
 
         assert topping == 'Начинки' and topping_displayed

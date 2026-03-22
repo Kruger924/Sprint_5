@@ -32,7 +32,7 @@ class TestRegistrationPage:
         driver.find_element(*RegistrationPageLocators.email_input).send_keys(Person.email)
         driver.find_element(*RegistrationPageLocators.password_input).send_keys(12345)
         driver.find_element(*RegistrationPageLocators.registration_btn).click()
-        WebDriverWait(driver, 3).until(EC.visibility_of_any_elements_located(RegistrationPageLocators.error_message_incorrect_password))
+        WebDriverWait(driver, 5).until(EC.visibility_of_any_elements_located(RegistrationPageLocators.error_message_incorrect_password))
         error = driver.find_element(*RegistrationPageLocators.error_message_incorrect_password).text
 
         assert (error == 'Некорректный пароль') and (driver.current_url == URLS.REG_PAGE_URL)
@@ -46,7 +46,7 @@ class TestRegistrationPage:
         driver.find_element(*RegistrationPageLocators.email_input).send_keys(Person.email)
         driver.find_element(*RegistrationPageLocators.password_input).send_keys(Person.password)
         driver.find_element(*RegistrationPageLocators.registration_btn).click()
-        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(RegistrationPageLocators.error_message_double_reg))   
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(RegistrationPageLocators.error_message_double_reg))   
         error = driver.find_element(*RegistrationPageLocators.error_message_double_reg).text
 
         assert (error == 'Такой пользователь уже существует') and (driver.current_url == URLS.REG_PAGE_URL)

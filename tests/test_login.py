@@ -15,7 +15,7 @@ class TestLogin:
         driver.find_element(*AuthPageLocators.password_input).send_keys(Person.password)
         driver.find_element(*AuthPageLocators.login_account_btn).click()
 
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
@@ -28,7 +28,7 @@ class TestLogin:
         driver.find_element(*AuthPageLocators.password_input).send_keys(Person.password)
         driver.find_element(*AuthPageLocators.login_account_btn).click()
 
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
@@ -41,7 +41,7 @@ class TestLogin:
         driver.find_element(*AuthPageLocators.password_input).send_keys(Person.password)
         driver.find_element(*AuthPageLocators.login_account_btn).click()
 
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
@@ -54,7 +54,7 @@ class TestLogin:
         driver.find_element(*AuthPageLocators.password_input).send_keys(Person.password)
         driver.find_element(*AuthPageLocators.login_account_btn).click()
         
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(MainPageLocators.place_order_button))
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
         
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
